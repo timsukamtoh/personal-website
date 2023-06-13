@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(47, 136, 238);
     word-wrap: break-word;
     position: relative;
     min-height: 100vh;
@@ -30,12 +29,11 @@ a{
 
 /*header*/
 .header{
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 60px;
-    background-color: rgb(23, 85, 156);
+    background-color: rgb(29, 35, 104);
 }
 .label{
     font-size: xx-large;
@@ -53,19 +51,68 @@ a{
     gap: 5vw;
 }
 
+nav a {
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+}
+
+nav a.active {
+  color: goldenrod;
+}
+
+
+/* transition */
+nav a {
+  position: relative;
+}
+nav a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: goldenrod;
+  height: 1px;
+}
+nav a:hover:after {
+  width: 100%;
+}
+
+nav a,
+nav a:after,
+nav a:before {
+  transition: all .5s;
+}
+a:hover {
+  color: goldenrod;
+}
+
 /*main*/
 .main{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-self: center;
     align-items: center;
+    justify-self: center;
     text-align: center;
-    padding: 25px;
-    gap: 40px;
-    padding-bottom: 70px;
-    width: auto;
+    gap: 2rem;
+    padding-bottom: 4rem;
+    background: #4e54c8;
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    width: 100%;
+    height:100vh;
+}
+.title-card{
+    position: relative;
+    top: 30vh;
 }
 .title{
+    margin-top: 2rem;
     font-size: xx-large;
     color: goldenrod;
 }
@@ -75,9 +122,155 @@ a{
     object-fit: cover;
     border-radius: 40em;
 }
+.info-card{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    z-index: 1;
+}
 .info{
     max-width: 50vw;
     font-size: larger;
+}
+.project-grid{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    z-index: 1;
+}
+.project-card{
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-content: center;
+    padding: 1rem;
+    border: 0.3rem solid transparent;
+    width: auto;
+}
+.project-card:hover{
+    border: 0.3rem solid goldenrod;
+    border-radius: 1rem;
+    color:goldenrod;
+}
+
+/* animation */
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
 }
 
 /*footer*/
