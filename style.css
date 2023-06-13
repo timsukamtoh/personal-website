@@ -316,6 +316,7 @@ a:hover {
     }
     .info{
         font-size: large;
+        min-width:75vw ;
     }
     .headshot{
         width: 30vw;
