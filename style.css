@@ -112,6 +112,9 @@ a:hover {
 }
 .title-card{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     top: 30vh;
 }
 .title{
