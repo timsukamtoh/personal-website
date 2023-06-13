@@ -251,8 +251,24 @@ a:hover {
     left: 85%;
     width: 150px;
     height: 150px;
-    animation-delay: 0s;
+    animation-delay: 8s;
     animation-duration: 11s;
+}
+
+.circles li:nth-child(11){
+    left: 57%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+    animation-duration: 7s;
+}
+
+.circles li:nth-child(12){
+    left: 12%;
+    width: 100px;
+    height: 100px;
+    animation-delay: 0s;
+    animation-duration: 10s;
 }
 
 
